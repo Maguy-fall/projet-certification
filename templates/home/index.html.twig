@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Accueil{% endtrans %}{% endblock %}
+
+{% block body %}
+<header class="bg-dark my-auto">
+    <h1 class="text-center">CADEXGROUP</h1>
+</header>
+ <div class="container p-5">
+
+        <div class="row py-5">
+            <div class="col-12">
+                <h2>{% trans %}Les Biens{% endtrans %}</h2>
+            </div>
+        </div>
+
+        <div class="row">
+
+            {% for maison in maisons %}
+                {# {% if loop.index <= 6 %} #}
+                    <div class="col-4 p-3">
+                        <div class="card">
+
+                            <img class="card-img-top" src="{{ asset('img/maisons/' ~ maison.img1) }}" alt="photo principale {{ maison.titre }}">
+
+                            <div class="card-body">
+                                <h5 class="card-title">{{ maison.titre }}</h5>
+                                <p class="card-text">{{ maison.description }}</p>
+                            </div>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">{% trans %}Surface{% endtrans %} : {{ maison.surface }}</li>
+                                <li class="list-group-item">{% trans %}Chambres{% endtrans %} : {{ maison.chambres }}</li>
+                                <li class="list-group-item">{% trans %}Prix{% endtrans %} : {{ maison.prix }}</li>
+                                <li class="list-group-item">{% trans %}Note{% endtrans %} : {{ maison.note }} / 5</li>
+                            </ul>
+
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+
+                        </div>
+                    </div>
+                {# {% endif %} #}
+            {% endfor %}
+
+        </div>
+
+        <div class="row py-5">
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-outline-dark">{% trans %}Voir toutes les maisons{% endtrans %}</button>
+            </div>
+        </div>
+
+        <div class="dropdown-divider m-5"></div>
+
+        <div class="row py-5">
+            <div class="col-12">
+                <h2>{% trans %}Les propri&eacute;taires{% endtrans %}</h2>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+{% endblock %}

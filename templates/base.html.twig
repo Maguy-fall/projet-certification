@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+        <meta charset="UTF-8">
+         <meta name="description" content="site CADEXGROUP">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Maguette ISSIAKA">
+
+        <title>CADEXGROUP - {% block title %}base{% endblock %}</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> {# asset pour viser le dossier "public" #}
+        
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+           <footer class="bg-light">
+            <div class="container-fluid">
+                <div class="row text-center text-dark">
+                    <div class="col-md-4 p-5 my-auto">
+                        <p>QUELQUES LIENS</p>
+                        <p class="dropdown-divider"></p>
+                        <ul>
+                            <li><a href="{{ path('home') }}">Accueil</a></li>
+                            <li>
+                                    
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 p-5 my-auto">
+                        <span class="logo"><img src="{{ asset('img/logo.png') }}" alt="logo BNB"></span>
+                    </div>
+                    <div class="col-md-4 p-5 my-auto">
+                        <p>COORDONN&Eacute;ES</p>
+                        <p class="dropdown-divider"></p>
+                        <p>FRANCE<p>
+                        <p>0033612928612</p>
+                        <p>contact@cadex-group.com</p>
+                        <p>www.cadex-group.com</p>
+                        <p>MALI</p>
+                        <p>FALADJE face aux cimetières et près de la station ORYX</p>
+                        <p>0022366890559</p>
+                        <p>contact@cadex-group.com</p>
+                        <p>www.cadex-group.com</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>{{ copyright|raw }}</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
+    
+

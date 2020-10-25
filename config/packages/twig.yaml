@@ -1,0 +1,4 @@
+twig:
+    globals:
+        copyright: '%app.copyright%'
+    default_path: '%kernel.project_dir%/templates'
