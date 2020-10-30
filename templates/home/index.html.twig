@@ -1,57 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans %}Accueil{% endtrans %}{% endblock %}
+{% block title %}{% trans %}CADEXGROUP!{% endtrans %}{% endblock %}
 
 {% block body %}
-<header class="bg-dark my-auto">
-    <h1 class="text-center">CADEXGROUP</h1>
+<!-- Scroll to top btn -->
+<button onclick="topFunction()" id="myBtn" title="Go to top" type="button" class="btn btn-default">
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+    </svg>
+</button>
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="{{ asset('img/header.jpg') }}" alt="header" width="1500" height="700">
+    <div class="w3-display-middle" style="width:65%">
 </header>
- <div class="container p-5">
 
-        <div class="row py-5">
-            <div class="col-12">
-                <h2>{% trans %}Les Biens{% endtrans %}</h2>
-            </div>
-        </div>
 
-        <div class="row">
-
-            {% for maison in maisons %}
-                {# {% if loop.index <= 6 %} #}
-                    <div class="col-4 p-3">
-                        <div class="card">
-
-                            <img class="card-img-top" src="{{ asset('img/maisons/' ~ maison.img1) }}" alt="photo principale {{ maison.titre }}">
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ maison.titre }}</h5>
-                                <p class="card-text">{{ maison.description }}</p>
-                            </div>
-
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{% trans %}Surface{% endtrans %} : {{ maison.surface }}</li>
-                                <li class="list-group-item">{% trans %}Chambres{% endtrans %} : {{ maison.chambres }}</li>
-                                <li class="list-group-item">{% trans %}Prix{% endtrans %} : {{ maison.prix }}</li>
-                                <li class="list-group-item">{% trans %}Note{% endtrans %} : {{ maison.note }} / 5</li>
-                            </ul>
-
-                            <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
-
-                        </div>
-                    </div>
-                {# {% endif %} #}
-            {% endfor %}
-
-        </div>
-
-        <div class="row py-5">
-            <div class="col-12 text-center">
-                <button type="button" class="btn btn-outline-dark">{% trans %}Voir toutes les maisons{% endtrans %}</button>
-            </div>
-        </div>
 
         <div class="dropdown-divider m-5"></div>
 
@@ -60,6 +25,43 @@
                 
             </div>
         </div>
+        <!-- Page content -->
+<div class="w3-content w3-light-grey" style="max-width:1100px;">
+<h1 class="text-center">Vos Experts du Marché de L'immobilier</h1>
+        <!-- Slideshow container -->
+<div class="slideshow-container">
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img1.jpg" style="width:100%">
+    <div class="text">Acheter</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img2.jpg" style="width:100%">
+    <div class="text">Vendre</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img3.jpg" style="width:100%">
+    <div class="text">Louer</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+    
         
     </div>
 

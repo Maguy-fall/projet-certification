@@ -1,66 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
 
-        <meta charset="UTF-8">
-         <meta name="description" content="site CADEXGROUP">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Maguette ISSIAKA">
+<head>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-        <title>CADEXGROUP - {% block title %}base{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> {# asset pour viser le dossier "public" #}
-        
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
+<body class="w3-light-grey">
 
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-           <footer class="bg-light">
-            <div class="container-fluid">
-                <div class="row text-center text-dark">
-                    <div class="col-md-4 p-5 my-auto">
-                        <p>QUELQUES LIENS</p>
-                        <p class="dropdown-divider"></p>
-                        <ul>
-                            <li><a href="{{ path('home') }}">Accueil</a></li>
-                            <li>
-                                    
-                                
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 p-5 my-auto">
-                        <span class="logo"><img src="{{ asset('img/logo.png') }}" alt="logo CADEXGROUP"></span>
-                    </div>
-                    <div class="col-md-4 p-5 my-auto">
-                        <p>COORDONN&Eacute;ES</p>
-                        <p class="dropdown-divider"></p>
-                        <p>FRANCE<p>
-                        <p>0033612928612</p>
-                        <p>contact@cadex-group.com</p>
-                        <p>www.cadex-group.com</p>
-                        <p>MALI</p>
-                        <p>FALADJE face aux cimetières et près de la station ORYX</p>
-                        <p>0022366890559</p>
-                        <p>contact@cadex-group.com</p>
-                        <p>www.cadex-group.com</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <p>{{ copyright|raw }}</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <!-- Navigation Bar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-light-grey">
+            <a href="{{ path('home') }}" class="w3-bar-item w3-xlarge"><b>
+                <i class="fa fa-map-marker w3-margin-right"></i>CADEXGROUP</b></a>
+               
+            <a href="{{ path('app_login') }}" class="w3-bar-item w3-xlarge w3-right">
+                <i class='fas fa-user-circle' style="font-size:150%"></i></a>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <a href="{{ path('contact') }}" class="w3-bar-item w3-xlarge ">
+                <i class="secondary-text" style="font-size:100%">CONTACT</i></a>  
+                
+        </div>
+    </div>
 
-    </body>
+    {% block body %}
+    
+    {% endblock %}
+    
+
+    <!-- Footer -->
+    <footer class="w3-container w3-center w3-margin-top">
+        <h5>Find Us On</h5>
+        <div class="w3-xlarge w3-padding-16">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </footer>
+
+</body>
+
+{% block javascripts %}
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
 
 </html>
     
