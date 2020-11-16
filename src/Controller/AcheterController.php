@@ -2,28 +2,29 @@
 
 namespace App\Controller;
 
-use App\Repository\AppartementRepository;
 use App\Repository\TerrainRepository;
+use App\Repository\AppartementRepository;
 use App\Repository\VillaRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomeController extends AbstractController
+class AcheterController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/acheter", name="acheter")
      */
     public function index(AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository)
     {
         $appartement = $appartementRepository->findAll();
         $terrain = $terrainRepository->findAll();
         $villa = $villaRepository->findAll();
-        
-        return $this->render('home/index.html.twig', [
+
+        return $this->render('acheter/index.html.twig', [
             'appartement' => $appartement,
             'terrain' => $terrain,
             'villa' => $villa,
         ]);
     }
 }
+    

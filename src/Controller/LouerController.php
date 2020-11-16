@@ -9,18 +9,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class LouerController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/louer", name="louer")
      */
     public function index(AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository)
     {
         $appartement = $appartementRepository->findAll();
         $terrain = $terrainRepository->findAll();
         $villa = $villaRepository->findAll();
-        
-        return $this->render('home/index.html.twig', [
+
+        return $this->render('louer/index.html.twig', [
             'appartement' => $appartement,
             'terrain' => $terrain,
             'villa' => $villa,

@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\MaisonsRepository;
+use App\Repository\TerrainRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=MaisonsRepository::class)
+ * @ORM\Entity(repositoryClass=TerrainRepository::class)
  */
-class Maisons
+class Terrain
 {
     /**
      * @ORM\Id
@@ -23,24 +23,14 @@ class Maisons
     private $titre;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $description;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $chambres;
 
     /**
      * @ORM\Column(type="float")
      */
     private $prix;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $note;
 
     /**
      * @ORM\Column(type="integer")
@@ -50,17 +40,7 @@ class Maisons
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $img1;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $img2;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $img3;
+    private $imageFilename;
 
     public function getId(): ?int
     {
@@ -91,18 +71,6 @@ class Maisons
         return $this;
     }
 
-    public function getChambres(): ?int
-    {
-        return $this->chambres;
-    }
-
-    public function setChambres(int $chambres): self
-    {
-        $this->chambres = $chambres;
-
-        return $this;
-    }
-
     public function getPrix(): ?float
     {
         return $this->prix;
@@ -111,18 +79,6 @@ class Maisons
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
-
-        return $this;
-    }
-
-    public function getNote(): ?int
-    {
-        return $this->note;
-    }
-
-    public function setNote(?int $note): self
-    {
-        $this->note = $note;
 
         return $this;
     }
@@ -139,38 +95,14 @@ class Maisons
         return $this;
     }
 
-    public function getImg1(): ?string
+    public function getImageFilename(): ?string
     {
-        return $this->img1;
+        return $this->imageFilename;
     }
 
-    public function setImg1(string $img1): self
+    public function setImageFilename(string $imageFilename): self
     {
-        $this->img1 = $img1;
-
-        return $this;
-    }
-
-    public function getImg2(): ?string
-    {
-        return $this->img2;
-    }
-
-    public function setImg2(string $img2): self
-    {
-        $this->img2 = $img2;
-
-        return $this;
-    }
-
-    public function getImg3(): ?string
-    {
-        return $this->img3;
-    }
-
-    public function setImg3(string $img3): self
-    {
-        $this->img3 = $img3;
+        $this->imageFilename = $imageFilename;
 
         return $this;
     }
