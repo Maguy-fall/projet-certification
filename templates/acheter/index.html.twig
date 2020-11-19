@@ -1,8 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AcheterController!{% endblock %}
+{% block title %}{% trans %}Hello AcheterController!{% endtrans %}{% endblock %}
 
 {% block body %}
 
-</div>
+{% for appartement in appartement %}
+
+    <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+        <div class="card-header">{{ appartement.prix }}</div>
+        <div class="card-body">
+            <h4 class="card-title">{{ appartement.titre }}</h4>
+            <p class="card-text">{{ appartement.description }}</p>
+        </div>
+    </div>
+    
+{% endfor %}
+
 {% endblock %}
+

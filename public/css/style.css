@@ -72,6 +72,10 @@ header{
     text-decoration: #000;
     font-size: 17px;
   }
+  #logo-wrapper {
+    width: 262px;
+    height: 200px;
+}
   
   /* Navbar links on mouse-over */
   .navbar a:hover {
