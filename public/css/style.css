@@ -60,7 +60,7 @@ header{
 .navbar {
     width: 100%;
     background-color: #555;
-    overflow: auto;
+    
   }
   
   /* Navbar links */
@@ -68,7 +68,6 @@ header{
     float: left;
     text-align: center;
     padding: 12px;
-    color: white;
     text-decoration: #000;
     font-size: 17px;
   }

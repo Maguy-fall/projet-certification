@@ -1,5 +1,5 @@
  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">HOME</a>
+  <a class="navbar-brand" href="{{ path('home') }}">HOME</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,20 +7,20 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >ACHETER</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('acheter') }}" role="button" aria-haspopup="true" aria-expanded="false" >ACHETER</a>
            <span class="sr-only">(current)</span>
           <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Appartement</a>
-          <a class="dropdown-item" href="#">Terrain</a>
-          <a class="dropdown-item" href="#">Villa</a>
+          <a class="dropdown-item" href="{{ path('acheter') }}">Appartement</a>
+          <a class="dropdown-item" href="{{ path('acheter') }}">Terrain</a>
+          <a class="dropdown-item" href="{{ path('acheter') }}">Villa</a>
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >LOUER</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('louer') }}" role="button" aria-haspopup="true" aria-expanded="false" >LOUER</a>
           <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Appartement</a>
-          <a class="dropdown-item" href="#">Terrain</a>
-          <a class="dropdown-item" href="#">Villa</a>
+          <a class="dropdown-item" href="{{ path('louer') }}">Appartement</a>
+          <a class="dropdown-item" href="{{ path('louer') }}">Terrain</a>
+          <a class="dropdown-item" href="{{ path('louer') }}">Villa</a>
          
         </div>
       </li>
@@ -34,17 +34,19 @@
         <a class="nav-link" href="{{ path('contact') }}">NOUS CONTACTER</a>
       </li>
       </div>
-      <div class="w3-nav-item w3-right">
+      <div class="nav-item w3-right">
       <li class="nav-item dropdown">
-       <a href="#" class="nav-link dropdown-toggle" >
-           <img src="{{ asset('img/icons8-customer-40.png') }}" class="dropdown" role="button"  aria-haspopup="true" aria-expanded="false" >MON COMPTE</a>
+        <a  href="{{ path('app_login') }}" class="nav-link dropdown-toggle">
+           <img src="{{ asset('img/icons8-customer-40.png') }}" class="dropdown" data-toggle="dropdow" role="button"  aria-haspopup="true" aria-expanded="false">MON COMPTE</a>
            
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="#">gestion des utilisateurs</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="{{ path('rendezvous') }}">Rendez-vous</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+          <a class="dropdown-item" href="{{ path('admin_user') }}">Gestion des utilisateurs</a>
+          <a class="dropdown-item" href="{{ path('admin_rendezvous') }}">Gestion des rendezvous</a>
+          <a class="dropdown-item" href="{{ path('admin_user') }}">Gestion des utilisateurs</a>
+
         </div>
       </li>
     </ul>

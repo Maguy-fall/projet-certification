@@ -29,7 +29,6 @@ class ContactController extends AbstractController
                             'nom' => $infos['nom'],
                             'prenom' => $infos['prenom'],
                             'email' => $infos['email'],
-                            'objet' => $infos['objet'],
                             'message' => $infos['message']
                         ],
                         'text/html'
