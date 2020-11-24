@@ -1,20 +1,82 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfileController!{% endblock %}
+{% block title %}Mon Espace{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="col-sm-10 offset-sm-1 p-1">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <a href="{{ path('home') }}"><i class="fa fa-close" style="font-size:36px"></i></a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/cadexgroup1/projet-de-certification/src/Controller/ProfileController.php'|file_link(0) }}">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/cadexgroup1/projet-de-certification/templates/profile/index.html.twig'|file_link(0) }}">templates/profile/index.html.twig</a></code></li>
-    </ul>
+    <h2>Bonjour {{ app.user.firstname }}, {{ app.user.roles|join('/')|lower }}</h2>
+
+    <div class="table-responsive-sm">
+        <table class="table table-bordered table-sm text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Prénom Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Avatar</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ app.user.firstname }} {{ app.user.lastname }}</td>
+                    <td>{{ app.user.email }}</td>
+                    <td>{{ app.user.img }}</td>
+                    <td>
+                        <a href="{{ path('user_edit', {'id': app.user.id}) }}" class="btn btn-warning"><i class='fas fa-edit'></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('admin') }}" class="btn btn-primary">ADMIN</a>
+        {% endif %}
+
+        <a href="{{ path('app_logout') }}" class="btn btn-info float-right">Se déconnecter</a>
+    </div>
+
 </div>
+<br>
+{% if is_granted('ROLE_PRO') %}
+<div class="col-sm-10 offset-sm-1 p-1">
+
+    <h2>Liste de vos prestations :</h2>
+
+    <div class="table-responsive-sm">
+        <table class="table table-bordered table-sm text-center">
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prestation in prestations %}
+                <tr>
+                    <td>{{ prestation.name }}</td>
+                    <td>{{ prestation.description }}</td>
+                    <td>{{ prestation.prix }}€</td>
+                    <td>
+                        <a href="{{ path('prestations_show', {'id': prestation.id}) }}" class="btn btn-primary"><i class='fas fa-plus'></i></a>
+                        <a href="{{ path('prestations_edit', {'id': prestation.id}) }}" class="btn btn-warning"><i class='fas fa-edit'></i></a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('prestations_new') }}" class="btn btn-success float-right">Ajouter prestation</a>
+    </div>
+
+</div>
+{% endif %}
+
 {% endblock %}

@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VendreController!{% endblock %}
+{% block title %}contact{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<header class="w3-display-container w3-content w3-hide-small " style="max-width:1500px">
+    <img class="w3-image" src="{{ asset('img/vente.jpg') }}" alt="vente" width="1500" height="700">
+    <div class="w3-display-middle" style="width:65%">
+</header>
+         <div class="container-fluid">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/cadexgroup1/projet-de-certification/src/Controller/VendreController.php'|file_link(0) }}">src/Controller/VendreController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/cadexgroup1/projet-de-certification/templates/vendre/index.html.twig'|file_link(0) }}">templates/vendre/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+        <div class="row p-5 bg-light">
+            <div class="col-12 text-center">
+                <h1>Renseignez les informations du bien que vous voulez vendre.</h1>
+            </div>
+        </div>
+
+        <div class="row p-5">
+            <div class="col-4 offset-4">
+                {{ form_start(formulaireVendre) }}
+                {{ form_end(formulaireVendre) }}
+            </div>
+        </div>
+
+    </div>

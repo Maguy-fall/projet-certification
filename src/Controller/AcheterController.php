@@ -15,7 +15,7 @@ class AcheterController extends AbstractController
     /**
      * @Route("/acheter", name="acheter")
      */
-    public function index(AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository)
+    public function index(AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository):Response
     {
         $appartement = $appartementRepository->findAll();
         $terrain = $terrainRepository->findAll();

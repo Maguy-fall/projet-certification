@@ -14,7 +14,7 @@ class LouerController extends AbstractController
     /**
      * @Route("/louer", name="louer")
      */
-    public function index(AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository)
+    public function index(AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository):Response
     {
         $appartement = $appartementRepository->findAll();
         $terrain = $terrainRepository->findAll();
