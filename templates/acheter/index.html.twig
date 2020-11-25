@@ -17,6 +17,13 @@
            <p class="card-text">{{ appartement.description }}</p>
         </div>        
       </div>
+{% endfor %}  
+
+<div class="m-3 text-center">
+    <h1>Nos villas</h1>
+</div>
+
+<div class="row row-cols-1">
 {% for villa in villa %}
     
   <div class="card text-white bg-success m-3" style="max-width: 20rem;">
@@ -29,6 +36,7 @@
   </div>
 {% endfor %}                          
 </div>
+
 {% endblock %}
 
                    
