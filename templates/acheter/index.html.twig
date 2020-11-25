@@ -10,14 +10,24 @@
 <div class="row row-cols-1">
 {% for appartement in appartement %}
     
-          <div class="card text-white bg-success m-3" style="max-width: 20rem;">
-          <div class="card-header">{{ appartement.titre }}r</div>
-          <div class="card-body">
-          <h4 class="card-title">{{ appartement.prix }}</h4>
-          <p class="card-text">{{ appartement.description }}</p>
+  <div class="card text-white bg-success m-3" style="max-width: 20rem;">
+      <div class="card-header">{{ appartement.titre }}r</div>
+        <div class="card-body">
+           <h4 class="card-title">{{ appartement.prix }}</h4>
+           <p class="card-text">{{ appartement.description }}</p>
         </div>        
-    </div>
-  {% endfor %}                          
+      </div>
+{% for villa in villa %}
+    
+  <div class="card text-white bg-success m-3" style="max-width: 20rem;">
+      <div class="card-header">{{ villa.titre }}</div>
+        <div class="card-body">
+           <h4 class="card-title">{{ villa.prix }}</h4>
+           <p class="card-text">{{ villa.description }}</p>
+        </div>        
+      </div>
+  </div>
+{% endfor %}                          
 </div>
 {% endblock %}
 
