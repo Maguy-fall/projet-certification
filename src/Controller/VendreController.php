@@ -27,7 +27,7 @@ class VendreController extends AbstractController
                     $this->renderView(
                         'vendre/email.html.twig', [
                             'nom' => $infos['nom'],
-                            'numéro_téléphone' => $infos['numéro_téléphone'],
+                            'numero_de_telephone' => $infos['numero_de_telephone'],
                             'email' => $infos['email'],
                             'message' => $infos['message']
                         ],

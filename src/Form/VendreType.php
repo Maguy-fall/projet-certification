@@ -18,7 +18,7 @@ class VendreType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class)
-            ->add('numéro_téléphone', TelType::class )
+            ->add('numero_de_telephone', TelType::class )
             ->add('email', EmailType::class)
             ->add('message', TextareaType::class)
             ->add('envoyer', SubmitType::class)

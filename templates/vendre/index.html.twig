@@ -3,24 +3,28 @@
 {% block title %}contact{% endblock %}
 
 {% block body %}
-
-<header class="w3-display-container w3-content w3-hide-small " style="max-width:1500px">
-    <img class="w3-image" src="{{ asset('img/vente.jpg') }}" alt="vente" width="1500" height="700">
+ 
+<div class="container w3-content w3-hide-small m-3" style="max-width:1500px">
+    <img src="{{ asset('img/img2.jpg') }}" alt="Vente" width="1300" height="350">
     <div class="w3-display-middle" style="width:65%">
-</header>
-         <div class="container-fluid">
+    <div style="bg-light my-auto">
+      <h1><b>Bien à vendre</b></h1>
+      </div>
+</div>
 
-        <div class="row p-5 bg-light">
-            <div class="col-12 text-center">
-                <h1>Renseignez les informations du bien que vous voulez vendre.</h1>
-            </div>
-        </div>
 
-        <div class="row p-5">
-            <div class="col-4 offset-4">
+    <div class="container m-3">
+         <h1>Renseignez les informations du bien que vous voulez vendre.</h1></br>
+         <h2>Vos informations personnelles</h2>
+
+    </div>
+    <div class="row p-5">
+        <div class="col-4 ">
+        
                 {{ form_start(formulaireVendre) }}
                 {{ form_end(formulaireVendre) }}
             </div>
         </div>
 
     </div>
+    {% endblock %}

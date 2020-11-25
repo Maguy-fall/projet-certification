@@ -3,18 +3,36 @@
 {% block title %}Hello AProposDeNousController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/cadexgroup1/projet-de-certification/src/Controller/AProposDeNousController.php'|file_link(0) }}">src/Controller/AProposDeNousController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/cadexgroup1/projet-de-certification/templates/a_propos_de_nous/index.html.twig'|file_link(0) }}">templates/a_propos_de_nous/index.html.twig</a></code></li>
-    </ul>
+<div class="container w3-content w3-hide-small" style="max-width:1500px">
+    <img src="{{ asset('img/capture79.jpg') }}" alt="capture" width="1300" height="350">
+    <div class="w3-display-middle" style="width:65%">
+      <div style="bg-light my-auto">
+      <h1><b>A propos de nous</b></h1>
+      </div>
+    </div> 
 </div>
+</div>
+<div class="container m-3">
+<h1>Qui sommes nous</h1>
+
+   <p>Crée en 2019, CADEX-GROUP est un cabinet de conseil en stratégie, d’investissement immobilier et services associés. Notre objectif est de fournir à nos clients des conseils stratégiques
+    et des solutions pour leurs projets immobiliers.
+    CADEX-GROUP conseille et accompagne particuliers, investisseurs, propriétaires, institutions, ONG et entreprises dans toute la chaîne de la valeur immobilière, 
+    de la réflexion stratégique jusqu’à l’aménagement des locaux. Fort de plusieurs années d'expériences, CADEX- GROUP conseille ses clients et investisseurs internationaux,
+    dans l'acquisition et la valorisation de leurs biens immobiliers. Une plate-forme complète de solutions immobilières au travers de ses principales lignes de métiers.</p> 
+<h2>Nos missions</h2>
+
+   <p>Audit</br>
+    Analyse</br>
+    Etudes de faisabilité et d’opportunité</br>
+    Stratégie globale</br>
+    Schéma directeur immobilier</p>
+<h2>Conseils en stratégie immobilière</h2>
+
+    <p>Nos équipes d’experts vous accompagnent afin d’analyser, évaluer la situation immobilière de votre projet immobilier, et comparer les scénarios envisagés.
+Nous vous apportons une vision globale de votre projet immobilier tant sur les aspects juridiques, techniques, financiers, fonctionnels, Ressources Humaines que communication.
+Nos analyses vous garantissent une stratégie immobilière à l’image de votre projet immobilier.
+</p>
+
+
 {% endblock %}
