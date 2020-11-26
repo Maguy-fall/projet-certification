@@ -8,19 +8,18 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('acheter') }}" role="button" aria-haspopup="true" aria-expanded="false" >ACHETER</a>
-           <span class="sr-only">(current)</span>
-          <div class="dropdown-menu">
-          <a class="dropdown-item" href="{{ path('acheter') }}">Appartement</a>
-          <a class="dropdown-item" href="{{ path('acheter') }}">Terrain</a>
-          <a class="dropdown-item" href="{{ path('acheter') }}">Villa</a>
-        </a>
+          <span class="sr-only">(current)</span>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ path('acheter') }}">Appartement</a>
+            <a class="dropdown-item" href="{{ path('acheter') }}">Terrain</a>
+            <a class="dropdown-item" href="{{ path('acheter') }}">Villa</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('louer') }}" role="button" aria-haspopup="true" aria-expanded="false" >LOUER</a>
-          <div class="dropdown-menu">
-          <a class="dropdown-item" href="{{ path('louer') }}">Appartement</a>
-          <a class="dropdown-item" href="{{ path('louer') }}">Terrain</a>
-          <a class="dropdown-item" href="{{ path('louer') }}">Villa</a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ path('louer') }}">Appartement</a>
+            <a class="dropdown-item" href="{{ path('louer') }}">Terrain</a>
+            <a class="dropdown-item" href="{{ path('louer') }}">Villa</a>
          
         </div>
       </li>
@@ -34,18 +33,15 @@
         <a class="nav-link" href="{{ path('contact') }}">NOUS CONTACTER</a>
       </li>
       </div>
-      <div class="nav-item w3-right">
       <li class="nav-item dropdown">
-        <a  href="{{ path('app_login') }}" class="nav-link dropdown-toggle">
-           <img src="{{ asset('img/icons8-customer-40.png') }}" class="dropdown" data-toggle="dropdow" role="button"  aria-haspopup="true" aria-expanded="false">MON COMPTE</a>
-           
+      <img src="{{ asset('img/icons8-customer-40.png') }}"><a class="w3-right nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('app_login') }}" role="button" aria-haspopup="true" aria-expanded="false">Mon compte</a>          
         <div class="dropdown-menu">
           <a class="dropdown-item" href="{{ path('profile') }}">Profile</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ path('admin_user') }}">Gestion des utilisateurs</a>
-          <a class="dropdown-item" href="#"></a>
-
+          <a class="dropdown-item" href="{{ path('admin_appartement_create') }}">Gestion des appartements</a>
+          <a class="dropdown-item" href="{{ path('admin_users') }}">Gestion des utilisateurs</a>
         </div>
+        </a>
       </li>
     </ul>
   </div>

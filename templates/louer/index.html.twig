@@ -4,18 +4,55 @@
 
 {% block body %}
 <div class="m-3 text-center">
-<h1>Nos appartements</h1>
+    <h1>Nos appartements</h1>
+</div>
 
 <div class="row row-cols-1">
 {% for appartement in appartement %}
     
-          <div class="card text-white bg-success m-3" style="max-width: 20rem;">
-          <div class="card-header">{{ appartement.titre }}r</div>
-          <div class="card-body">
-          <h4 class="card-title">{{ appartement.prix }}</h4>
-          <p class="card-text">{{ appartement.description }}</p>
+  <div class="card text-white bg-success m-3" style="max-width: 20rem;">
+      <div class="card-header">{{ appartement.titre }}</div>
+        <div class="card-body">
+           <h4 class="card-title">{{ appartement.prix }}</h4>
+           <p class="card-text">{{ appartement.description }}</p>
         </div>        
-    </div>
-  {% endfor %}                          
+      </div>
+{% endfor %}  
 
+<div class="m-3 text-center">
+    <h1>Nos villas</h1>
+</div>
+
+<div class="row row-cols-1">
+{% for villa in villa %}
+    
+  <div class="card text-white bg-success m-3" style="max-width: 20rem;">
+      <div class="card-header">{{ villa.titre }}</div>
+        <div class="card-body">
+           <h4 class="card-title">{{ villa.prix }}</h4>
+           <p class="card-text">{{ villa.description }}</p>
+        </div>        
+      </div>
+
+{% endfor %}  
+
+<div class="m-3 text-center">
+    <h1>Nos terrains</h1>
+</div>
+
+<div class="row row-cols-1">
+{% for terrain in terrain %}
+    
+  <div class="card text-white bg-success m-3" style="max-width: 20rem;">
+      <div class="card-header">{{ terrain.titre }}</div>
+        <div class="card-body">
+           <h4 class="card-title">{{ terrain.prix }}</h4>
+           <p class="card-text">{{ terrain.description }}</p>
+        </div>        
+      </div>
+
+{% endfor %}                          
+</div>
+</div>
+</div>
 {% endblock %}

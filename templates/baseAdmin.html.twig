@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}base{% endblock %}</title>
+   
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    
+    {{ include('navbar.html.twig') }}
+
+    <header>
+            {% for label, messages in app.flashes(['success', 'danger']) %}
+                {% for message in messages %}
+                    <div class="flash-{{ label }} p-3 fixed-top bg-{{ label }} text-white text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <div class="container-fluid m-0 p-0">
+                <div class="jumbotron mb-0 bg-dark text-white">
+                    <h2>CADEXGROUP - espace administrateur</h2>
+                    <p>Bienvenue sur l'espace administrateur du site CADEXGROUP</p>
+                </div>
+            </div>
+        </header>
+
+  
+    {% block body %}{% endblock %}
+   
+    
+
+    <!-- Footer -->
+    <footer class="w3-container w3-center w3-margin-top">
+        <h5>Suivez-nous</h5>
+        <div class="w3-xlarge w3-padding-16">
+            <img src="{{ asset('img/icons8-facebook-30.png') }}" class="w3-hover-opacity">
+            <img src="{{ asset('img/icons8-instagram-30.png') }}" class="w3-hover-opacity" >
+            <img src="{{ asset('img/icons8-twitter-30.png') }}" class="w3-hover-opacity" >
+            <img src="{{ asset('img/icons8-linkedin-30.png') }}" class="w3-hover-opacity" >
+            <img src="{{ asset('img/icons8-youtube-30.png') }}" class="w3-hover-opacity" >
+        </div>
+    </footer>
+
+
+
+    
+    {% block javascripts %}{% endblock %}
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
