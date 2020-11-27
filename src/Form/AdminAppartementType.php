@@ -9,7 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class AdminAppartementType extends AbstractType
@@ -23,23 +22,23 @@ class AdminAppartementType extends AbstractType
             ->add('description', TextareaType::class, [
                 'label' => 'Description'
             ])
-            ->add('prix', IntegerType::class, [
+            ->add('prix', TextType::class, [
                 'label' => 'Prix de vente'
             ])
             ->add('imageFilename', TextType::class, [
                 'label' => "lien vers l'image",
                
             ])
-            ->add('surface', IntegerType::class, [
+            ->add('surface', TextType::class, [
                 'label' => 'superficie',
             ])
-            ->add('chambres', IntegerType::class, [
+            ->add('chambres', NumberType::class, [
                 'label' => 'nombre de chambres'
             ])
-            ->add('garage', Integer::class, [
+            ->add('garage', NumberType::class, [
                 'label' => 'nombre de garages'
             ])
-            ->add('salle_de_bains', IntegerType::class, [
+            ->add('salle_de_bains', NumberType::class, [
                 'label' => 'nombre de salle de bains'
             ])
             ->add('envoyer', SubmitType::class, [
