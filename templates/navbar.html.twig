@@ -34,11 +34,12 @@
       </li>
       </div>
       <li class="nav-item dropdown">
-      <img src="{{ asset('img/icons8-customer-40.png') }}"><a class="w3-right nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('app_login') }}" role="button" aria-haspopup="true" aria-expanded="false">Mon compte</a>          
+      <img src="{{ asset('img/icons8-customer-40.png') }}"><a class="w3-right text-light nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('app_login') }}" role="button" aria-haspopup="true" aria-expanded="false">Mon compte</a>          
         <div class="dropdown-menu">
           <a class="dropdown-item" href="{{ path('profile') }}">Profile</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ path('admin_appartement_create') }}">Gestion des appartements</a>
+           <a class="dropdown-item" href="{{ path('admin_villa_create') }}">Gestion des villas</a>
           <a class="dropdown-item" href="{{ path('admin_users') }}">Gestion des utilisateurs</a>
         </div>
         </a>

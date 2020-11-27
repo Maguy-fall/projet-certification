@@ -12,7 +12,8 @@
 /* **************************************** BASE - FOOTER **************************************** */
 
 footer .logo img{
-    width: 100%;
+    width: 100px;
+    height:75px;
 }
 
 footer a{
@@ -22,6 +23,9 @@ footer a{
     footer a:hover{
         color: #888;
     }
+  footer {
+    background-color: #000;
+  }
 
 /* **************************************** HOME - HEADER **************************************** */
 

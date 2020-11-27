@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminTerrainController!{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="row p-5 bg-light">
+        <div class="col-12 text-center">
+            <h1>Ajout d'un terrain</h1>
+        </div>
+    </div>
+
+    <div class="row p-5">
+        <div class="col-4 offset-4">
+            {{ form(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
