@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Terrain{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row p-5 bg-light">
+        <div class="col-12 text-center">
+    <h1>Ajouter un terrain</h1>
+
+    {{ include('terrain/_form.html.twig') }}
+
+    <a href="{{ path('terrain_index') }}">Retour à la liste</a>
+{% endblock %}

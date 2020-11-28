@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appartement{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row p-5 bg-light">
+        <div class="col-12 text-center">
+    <h1>Liste des appartements</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Titre</th>
+                <th>ImageFilename</th>
+                <th>Surface</th>
+                <th>Chambres</th>
+                <th>Garage</th>
+                <th>Salle_de_bains</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for appartement in appartements %}
+            <tr>
+                <td>{{ appartement.id }}</td>
+                <td>{{ appartement.description }}</td>
+                <td>{{ appartement.prix }}</td>
+                <td>{{ appartement.titre }}</td>
+                <td>{{ appartement.imageFilename }}</td>
+                <td>{{ appartement.surface }}</td>
+                <td>{{ appartement.chambres }}</td>
+                <td>{{ appartement.garage }}</td>
+                <td>{{ appartement.salleDeBains }}</td>
+                <td>
+                    <a href="{{ path('appartement_show', {'id': appartement.id}) }}">Voir</a>
+                    <a href="{{ path('appartement_edit', {'id': appartement.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Aucun appartement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('appartement_new') }}"><Ajouter un appartement</a>
+{% endblock %}
