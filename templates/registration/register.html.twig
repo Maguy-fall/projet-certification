@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
 
@@ -12,7 +12,7 @@
            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
            {% endfor %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+    <h1 class="h3 mb-3 font-weight-normal">S'inscrire</h1>
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
@@ -22,15 +22,9 @@
         {{ form_row(registrationForm.agreeTerms) }}
         <div class="row h-100">
             <div class="col-sm-6 my-auto">
-               <button type="submit" class="btn btn-lg btn-primary">Register</button>
+               <button type="submit" class="btn btn-lg btn-primary">S'inscrire</button>
             </div>
             {{ form_end(registrationForm) }}
-            <div class="col-sm-6 px-5 my-auto">
-                    Déjà inscrit ?
-                    <a class="btn btn-lg btn-info" href="{{ path('app_login') }}">
-                        Sign in
-                    </a>
-                </div>
             </div>
 
         </div>
