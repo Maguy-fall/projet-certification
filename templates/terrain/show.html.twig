@@ -3,40 +3,48 @@
 {% block title %}Terrain{% endblock %}
 
 {% block body %}
-    <h1>Terrain</h1>
+<div class="w3-container">
+    <div class="col-sm-6 offset-sm-3 p-4">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ terrain.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ terrain.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ terrain.description }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ terrain.prix }}</td>
-            </tr>
-            <tr>
-                <th>Surface</th>
-                <td>{{ terrain.surface }}</td>
-            </tr>
-            <tr>
-                <th>ImageFilename</th>
-                <td>{{ terrain.imageFilename }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <h2>Terrain</h2>
 
-    <a href="{{ path('terrain_index') }}">Retour à la liste</a>
+        <table class="table table-bordered table-sm text-center">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ terrain.id }}</td>
+                </tr>
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ terrain.titre }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ terrain.description }}</td>
+                </tr>
+                <tr>
+                    <th>Prix</th>
+                    <td>{{ terrain.prix }}</td>
+                </tr>
+                <tr>
+                    <th>Surface</th>
+                    <td>{{ terrain.surface }}</td>
+                </tr>
+                <tr>
+                    <th>ImageFilename</th>
+                    <td>{{ terrain.imageFilename }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="javascript:history.back()" class="btn btn-info">Retour</a>
 
-    <a href="{{ path('terrain_edit', {'id': terrain.id}) }}">Modifier</a>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('terrain_edit', {'id': terrain.id}) }}" class="btn btn-warning float-right">Editer</a>
 
-    {{ include('terrain/_delete_form.html.twig') }}
+        {{ include('terrain/_delete_form.html.twig') }}
+        {% endif %}
+    </div>
+    
+</div>
+
 {% endblock %}

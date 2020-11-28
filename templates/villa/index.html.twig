@@ -3,47 +3,47 @@
 {% block title %}Villa{% endblock %}
 
 {% block body %}
+<div class="col-10 p-5">
     <h1>Liste des villas</h1>
 
-    <table class="table">
+    <table class="table table-bordered table-hover table-sm text-center">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Chambres</th>
-                <th>Surface</th>
-                <th>Garage</th>
-                <th>Salle_de_bains</th>
-                <th>ImageFilename</th>
-                <th>Prix</th>
-                <th>actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">Prix</th>
+                <th scope="col">ImageFilename</th>
+                <th scope="col">Surface</th>
+                <th scope="col">Chambres</th>
+                <th scope="col">Garage</th>
+                <th scope="col">Salle_de_bains</th>
+                <th scope="col">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for villa in villas %}
             <tr>
                 <td>{{ villa.id }}</td>
-                <td>{{ villa.titre }}</td>
                 <td>{{ villa.description }}</td>
-                <td>{{ villa.chambres }}</td>
-                <td>{{ villa.surface }}</td>
-                <td>{{ villa.garage }}</td>
-                <td>{{ villa.salleDeBains }}</td>
-                <td>{{ villa.imageFilename }}</td>
                 <td>{{ villa.prix }}</td>
+                <td>{{ villa.titre }}</td>
+                <td>{{ villa.imageFilename }}</td>
+                <td>{{ villa.surface }}</td>
+                <td>{{ villa.chambres }}</td>
+                <td>{{ villa.garage }}</td>
+                <td>{{villa.salleDeBains }}</td>
+
                 <td>
-                    <a href="{{ path('villa_show', {'id': villa.id}) }}">Voir</a>
-                    <a href="{{ path('villa_edit', {'id': villa.id}) }}">Editer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="10">Aucune villa trouvée</td>
+                    <i class="fas fa-eye"><a href="{{ path('villa_show', {'id':villa.id}) }}">
+                - 
+                    <i class="fas fa-edit"><a href="{{ path('villa_edit', {'id':villa.id}) }}">
+                </td>       
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    <a href="{{ path('villa_new') }}" class="btn btn-outline-dark float-right">Ajouter</a>
+</div>
 
-    <a href="{{ path('villa_new') }}">Ajout d'une villa</a>
 {% endblock %}

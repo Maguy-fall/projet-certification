@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Appartement{% endblock %}
+{% block title %}Mon Espace{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
+<div class="col-md-8 offset-sm-3 p-2">
+
+    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
 
     <div class="row p-5 bg-light">
         <div class="col-12 text-center">
-    <h1>Modifier appartement</h1>
+    <h1>Mes appartements</h1>
 
-    {{ include('appartement/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('appartement_index') }}">Retour à la liste</a>
+    {{ include('appartement/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
     {{ include('appartement/_delete_form.html.twig') }}
 {% endblock %}

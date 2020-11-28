@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Villa{% endblock %}
+{% block title %}Nouvelle villa{% endblock %}
 
 {% block body %}
-    <h1>Ajout d'une villa</h1>
+<div class="col-md-8 offset-sm-3 p-2">
+
+    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
+
+    <h2>Créer une villa</h2>
 
     {{ include('villa/_form.html.twig') }}
 
-    <a href="{{ path('villa_index') }}">Retour à la liste</a>
+</div>
 {% endblock %}

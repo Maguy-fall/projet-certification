@@ -1,13 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Utilisateursr{% endblock %}
+{% block title %}Mon Espace{% endblock %}
 
 {% block body %}
-    <h1>Voir utilisateur</h1>
+<div class="col-md-8 offset-sm-3 p-2">
+
+    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
+
+    <h2>Mes informations personnelles</h2>
 
     {{ include('user/_form.html.twig', {'button_label': 'mettre à jour'}) }}
 
     <a href="{{ path('user_index') }}">retour à la liste</a>
 
     {{ include('user/_delete_form.html.twig') }}
+
+</div>
 {% endblock %}

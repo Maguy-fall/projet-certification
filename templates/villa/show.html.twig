@@ -3,52 +3,54 @@
 {% block title %}Villa{% endblock %}
 
 {% block body %}
-    <h1>Liste des villas</h1>
+<div class="w3-container">
+    <div class="col-sm-6 offset-sm-3 p-4">
+      
+            <h1>Villas</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ villa.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ villa.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ villa.description }}</td>
-            </tr>
-            <tr>
-                <th>Chambres</th>
-                <td>{{ villa.chambres }}</td>
-            </tr>
-            <tr>
-                <th>Surface</th>
-                <td>{{ villa.surface }}</td>
-            </tr>
-            <tr>
-                <th>Garage</th>
-                <td>{{ villa.garage }}</td>
-            </tr>
-            <tr>
-                <th>Salle_de_bains</th>
-                <td>{{ villa.salleDeBains }}</td>
-            </tr>
-            <tr>
-                <th>ImageFilename</th>
-                <td>{{ villa.imageFilename }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ villa.prix }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table class="table table-bordered table-sm text-center">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ villa.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Titre</th>
+                        <td>{{ villa.titre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ villa.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Chambres</th>
+                        <td>{{ villa.chambres }}</td>
+                    </tr>
+                    <tr>
+                        <th>Garage</th>
+                        <td>{{ villa.garage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Salle_de_bains</th>
+                        <td>{{ villa.salleDeBains }}</td>
+                    </tr>
+                    <tr>
+                        <th>ImageFilename</th>
+                        <td>{{ villa.imageFilename }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prix</th>
+                        <td>{{ villa.prix }}</td>
+                    </tr>
+                </tbody>
+            </table
+            <a href="javascript:history.back()" class="btn btn-info">Retour</a>
 
-    <a href="{{ path('villa_index') }}">Retour à la liste</a>
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('villa_edit', {'id': villa.id}) }}" class="btn btn-warning float-right">Editer</a>
 
-    <a href="{{ path('villa_edit', {'id': villa.id}) }}">Editer</a>
-
-    {{ include('villa/_delete_form.html.twig') }}
+            {{ include('villa/_delete_form.html.twig') }}
+            {% endif %}
+        </div>
+</div>
 {% endblock %}

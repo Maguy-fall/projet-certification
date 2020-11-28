@@ -3,25 +3,22 @@
 {% block title %}Appartement{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
-
-    <div class="row p-5 bg-light">
-        <div class="col-12 text-center">
+<div class="col-10 p-5">
     <h1>Liste des appartements</h1>
 
-    <table class="table">
+    <table class="table table-bordered table-hover table-sm text-center">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Titre</th>
-                <th>ImageFilename</th>
-                <th>Surface</th>
-                <th>Chambres</th>
-                <th>Garage</th>
-                <th>Salle_de_bains</th>
-                <th>actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">Prix</th>
+                <th scope="col">ImageFilename</th>
+                <th scope="col">Surface</th>
+                <th scope="col">Chambres</th>
+                <th scope="col">Garage</th>
+                <th scope="col">Salle_de_bains</th>
+                <th scope="col">actions</th>
             </tr>
         </thead>
         <tbody>
@@ -36,18 +33,21 @@
                 <td>{{ appartement.chambres }}</td>
                 <td>{{ appartement.garage }}</td>
                 <td>{{ appartement.salleDeBains }}</td>
+
                 <td>
-                    <a href="{{ path('appartement_show', {'id': appartement.id}) }}">Voir</a>
-                    <a href="{{ path('appartement_edit', {'id': appartement.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="10">Aucun appartement trouvé</td>
+                    <i class="fas fa-eye"><a href="{{ path('appartement_show', {'id':appartement.id}) }}">
+                - 
+                    <i class="fas fa-edit"><a href="{{ path('appartement_edit', {'id':appartement.id}) }}">
+                </td>       
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    <a href="{{ path('appartement_new') }}" class="btn btn-outline-dark float-right">Ajouter</a>
+</div>
 
-    <a href="{{ path('appartement_new') }}"><Ajouter un appartement></a>   
 {% endblock %}
+
+
+                
+            

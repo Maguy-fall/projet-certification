@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Appartement{% endblock %}
+{% block title %}Nouvel Appartement{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
+<div class="col-md-8 offset-sm-3 p-2">
 
-    <div class="row p-5 bg-light">
-        <div class="col-12 text-center">
-    <h1>Ajout Appartement</h1>
+    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
+
+    <h2>Créer un appartement</h2>
 
     {{ include('appartement/_form.html.twig') }}
 
-    <a href="{{ path('appartement_index') }}">Retour à la liste</a>
 {% endblock %}
