@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Villa{% endblock %}
+{% block title %}Villa{% endblock %}
 
 {% block body %}
-    <h1>Edit Villa</h1>
+    <h1>Voir les Villas</h1>
 
-    {{ include('villa/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('villa/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('villa_index') }}">back to list</a>
+    <a href="{{ path('villa_index') }}">Retour à la liste</a>
 
     {{ include('villa/_delete_form.html.twig') }}
 {% endblock %}

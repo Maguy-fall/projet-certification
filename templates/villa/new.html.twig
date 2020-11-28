@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Villa{% endblock %}
+{% block title %}Villa{% endblock %}
 
 {% block body %}
-    <h1>Create new Villa</h1>
+    <h1>Ajout d'une villa</h1>
 
     {{ include('villa/_form.html.twig') }}
 
-    <a href="{{ path('villa_index') }}">back to list</a>
+    <a href="{{ path('villa_index') }}">Retour à la liste</a>
 {% endblock %}
