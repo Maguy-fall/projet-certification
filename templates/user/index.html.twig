@@ -1,13 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin index{% endblock %}
+{% block title %}Utilisateurs{% endblock %}
 
 {% block body %}
-<div class="col-sm-10 offset-sm-1 p-1">
-
-    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
-
-    <h1>Admin index</h1>
+<div class="col-10 p-5">
+    <h1>Liste des utilisateurs</h1>
 
     <div class="table-responsive-sm">
         <table class="table table-bordered table-sm text-center">
@@ -32,15 +29,11 @@
                     <a href="{{ path('user_edit', {'id': user.id}) }}"><i class="fas fa-edit"></i></a>
                     </td>
                 </tr>
-                {% else %}
-                <tr>
-                    <td colspan="5">no records found</td>
-                </tr>
+
                 {% endfor %}
             </tbody>
         </table>
+        <a href="{{ path('user_new') }}" class="btn btn-info float-right">Ajouter</a>
+</div>
 
-    </div>
-
-    <a href="javascript:history.back()" class="btn btn-info">Retour</a>
 {% endblock %}

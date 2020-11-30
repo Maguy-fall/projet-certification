@@ -3,9 +3,13 @@
 {% block title %}Appartement{% endblock %}
 
 {% block body %}
-    <h1>Appartement</h1>
+<div class="col-md-8 offset-sm-3 p-2">
+   
+    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
 
-    <table class="table">
+    <h2>Mes Appartements</h2>
+
+    <table class="table table-bordered table-sm text-center">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -46,9 +50,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('appartement_index') }}">Retour à la liste</a>
-
-    <a href="{{ path('appartement_edit', {'id': appartement.id}) }}">Voir</a>
+    <a href="{{ path('appartement_edit', {'id': appartement.id}) }}" button class="btn btn-success float-left">Voir</a>
 
     {{ include('appartement/_delete_form.html.twig') }}
 {% endblock %}

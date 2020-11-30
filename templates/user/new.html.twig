@@ -3,9 +3,13 @@
 {% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Ajout d'un utilisateur</h1>
+<div class="col-md-8 offset-sm-3 p-2">
+    
+    <a href="javascript:history.back()"><i class="fa fa-arrow-left" style="font-size:36px"></i></a>
+    
+    <h2>Ajouter d'un utilisateur</h2>
 
     {{ include('user/_form.html.twig') }}
 
-    <a href="{{ path('user_index') }}">Retour à la liste</a>
+</div>
 {% endblock %}

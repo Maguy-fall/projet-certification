@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Repository\VillaRepository;
 use App\Repository\TerrainRepository;
@@ -64,7 +65,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="user_delete", methods={"GET","POST"})
+     * @Route("/{id}", name="user_delete", methods={"DELETE"})
      */
     public function delete(Request $request, User $user): Response
     {

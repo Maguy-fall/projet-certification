@@ -29,15 +29,13 @@
                 <td>{{ terrain.surface }}</td>
                 <td>{{ terrain.imageFilename }}</td>
                 <td>
-                    <i class="fas fa-eye"><a href="{{ path('terrain_show', {'id':terrain.id}) }}">
-                - 
-                    <i class="fas fa-edit"><a href="{{ path('terrain_edit', {'id':terrain.id}) }}">
-                    
+                <a href="{{ path('terrain_show', {'id':terrain.id}) }}"><i class="fas fa-eye"></i></a>
+                <a href="{{ path('terrain_edit', {'id':terrain.id}) }}"><i class="fas fa-edit"></i></a>    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('terrain_new') }}" class="btn btn-outline-dark float-right">Ajouter</a>
+    <a href="{{ path('terrain_new') }}" class="btn btn-info float-right">Ajouter</a>
 {% endblock %}
