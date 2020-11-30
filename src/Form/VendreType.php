@@ -17,10 +17,18 @@ class VendreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class)
-            ->add('numero_de_telephone', TelType::class )
-            ->add('email', EmailType::class)
-            ->add('message', TextareaType::class)
+            ->add('nom', TextType::class, [
+                'label' => 'Entrez votre nom',
+            ])
+            ->add('numero_de_telephone', TelType::class, [
+                'label' => 'Numéro de téléphone',
+            ] )
+            ->add('email', EmailType::class, [
+                'label' => 'Mettez votre email',
+            ])
+            ->add('message', TextareaType::class, [
+                'label' => 'Tapez votre message',
+            ])
             ->add('envoyer', SubmitType::class)
         ;
         
