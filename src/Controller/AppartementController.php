@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/appartement")
@@ -17,6 +18,7 @@ class AppartementController extends AbstractController
 {
     /**
      * @Route("/", name="appartement_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(AppartementRepository $appartementRepository): Response
     {
@@ -27,6 +29,7 @@ class AppartementController extends AbstractController
 
     /**
      * @Route("/new", name="appartement_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +53,7 @@ class AppartementController extends AbstractController
 
     /**
      * @Route("/{id}", name="appartement_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function show(Appartement $appartement): Response
     {
@@ -60,6 +64,7 @@ class AppartementController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="appartement_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Appartement $appartement): Response
     {
@@ -80,6 +85,7 @@ class AppartementController extends AbstractController
 
     /**
      * @Route("/{id}", name="appartement_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Appartement $appartement): Response
     {

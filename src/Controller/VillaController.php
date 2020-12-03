@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 /**
  * @Route("/villa")
@@ -17,6 +19,7 @@ class VillaController extends AbstractController
 {
     /**
      * @Route("/", name="villa_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(VillaRepository $villaRepository): Response
     {
@@ -27,6 +30,7 @@ class VillaController extends AbstractController
 
     /**
      * @Route("/new", name="villa_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,7 @@ class VillaController extends AbstractController
 
     /**
      * @Route("/{id}", name="villa_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function show(Villa $villa): Response
     {
@@ -60,6 +65,7 @@ class VillaController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="villa_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Villa $villa): Response
     {
@@ -80,6 +86,7 @@ class VillaController extends AbstractController
 
     /**
      * @Route("/{id}", name="villa_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Villa $villa): Response
     {

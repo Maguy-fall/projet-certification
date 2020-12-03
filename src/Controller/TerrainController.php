@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 /**
  * @Route("/terrain")
@@ -17,6 +19,7 @@ class TerrainController extends AbstractController
 {
     /**
      * @Route("/", name="terrain_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(TerrainRepository $terrainRepository): Response
     {
@@ -27,6 +30,7 @@ class TerrainController extends AbstractController
 
     /**
      * @Route("/new", name="terrain_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,7 @@ class TerrainController extends AbstractController
 
     /**
      * @Route("/{id}", name="terrain_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function show(Terrain $terrain): Response
     {
@@ -60,6 +65,7 @@ class TerrainController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="terrain_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Terrain $terrain): Response
     {
@@ -80,6 +86,7 @@ class TerrainController extends AbstractController
 
     /**
      * @Route("/{id}", name="terrain_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Terrain $terrain): Response
     {

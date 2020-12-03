@@ -13,6 +13,9 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
+
 
 /**
  * @ Route("/profile")
@@ -30,6 +33,7 @@ class ProfileController extends AbstractController
 
     /**
      * @Route("/", name="profile",methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(UserRepository $userRepository, AppartementRepository $appartementRepository, TerrainRepository $terrainRepository, VillaRepository $villaRepository): Response
     {
@@ -43,6 +47,7 @@ class ProfileController extends AbstractController
     }
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, User $user): Response
     {
@@ -66,6 +71,7 @@ class ProfileController extends AbstractController
 
     /**
      * @Route("/{id}", name="user_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, User $user): Response
     {
