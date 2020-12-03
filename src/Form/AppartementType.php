@@ -19,7 +19,7 @@ class AppartementType extends AbstractType
                 'label' => 'Description',
             ])
             ->add('prix', NumberType::class, [
-                'scale' => 2,
+                'scale' => 9,
                 'label' => 'Prix en CFA',
                 ]
             )
