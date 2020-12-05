@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use App\Repository\VillaRepository;
 use App\Repository\TerrainRepository;
@@ -41,7 +42,7 @@ class ProfileController extends AbstractController
 
         $appartement = $appartementRepository->findByuser;
 
-        return $this->render('security/profile.html.twig', [
+        return $this->render('profile/profile.html.twig', [
             'user' => $user,
         ]);
     }
