@@ -29,7 +29,8 @@
     {% block body %}{% endblock %}
     
 <!-- Footer -->
-<footer class="font-small mdb-color lighten-3 pt-4">
+<footer class="page-footer font-small blue-grey lighten-5">
+  <div style="background-color: #1C2331;">
     <div class="container-fluid">
                 <div class="row text-center text-dark">
                     <div class="col-md-4 p-5 my-auto">
@@ -41,25 +42,23 @@
         </ul>
     </div>
         <!-- Social buttons -->
-        <div class="row text-right text-dark">
+        <div class="text-dark">
                     <div class="col-md-4 p-5 my-auto">
-        <p class="font-weight-bold">Suivez-nous</p>
+    <h5 class="font-weight-bold">Suivez-nous</h5></br>
         <!-- Facebook -->
-        <a type="button" class="btn btn-fb">
+        <ul>
+        <a class="text-white" type="button" class="btn btn-fb">
           <i class="fab fa-facebook-f"></i>
         </a>
         <!-- Twitter -->
-        <a type="button" class="btn btn-tw">
+        <a class="text-white" type="button" class="btn btn-tw">
           <i class="fab fa-twitter"></i>
         </a>
         <!-- Google +-->
-        <a type="button" class="btn btn-gplus">
+        <a class="text-white" type="button" class="btn btn-gplus">
           <i class="fab fa-google-plus-g"></i>
         </a>
-        <!-- Dribbble -->
-        <a type="button" class="btn btn-dribbble">
-          <i class="fab fa-dribbble"></i>
-        </a>
+        </ul>
 </div>
 </div>
       </div>
@@ -70,6 +69,13 @@
 
   </div>
   <!-- Footer Links -->
+   <!-- Copyright -->
+  <div class="footer-copyright text-dark text-center mt-3">© 2020 Copyright:
+      <a class="text-dark" href="{{ path('mentions_legales') }}"> Mentions légales</a>
+      <a class="text-dark" href="{{ path('conditions_generales_utilisation') }}"> Conditions Générales d'Utilisation</a>
+
+  </div>
+  <!-- Copyright -->
 </footer>
 <!-- Footer -->
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
