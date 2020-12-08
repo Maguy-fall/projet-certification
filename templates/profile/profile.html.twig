@@ -7,23 +7,21 @@
 
     <a href="{{ path('profile') }}"><i class="fa fa-close" style="font-size:36px"></i></a>
 
-    <h2>Bonjour {{ app.user.firstname }}, {{ app.user.roles|join('/')|lower }}</h2>
+    <h2>Bonjour {{ app.user.Username }}, {{ app.user.roles|join('/')|lower }}</h2>
 
     <div class="table-responsive-sm">
         <table class="table table-bordered table-sm text-center">
             <thead>
                 <tr>
-                    <th scope="col">Prénom Nom</th>
+                    <th scope="col">Nom</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Avatar</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ app.user.firstname }} {{ app.user.lastname }}</td>
+                    <td>{{ app.user.Username }} {{ app.user.Username }}</td>
                     <td>{{ app.user.email }}</td>
-                    <td>{{ app.user.img }}</td>
                     <td>
                         <a href="{{ path('user_edit', {'id': app.user.id}) }}" class="btn btn-warning"><i class='fas fa-edit'></i></a>
                     </td>
@@ -31,15 +29,14 @@
             </tbody>
         </table>
 
-        {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('admin') }}" class="btn btn-primary">ADMIN</a>
-        {% endif %}
+        {# {% if is_granted('ROLE_ADMIN') %} #}
+        {# <a href="{{ path('profile') }}" class="btn btn-primary"></a> #}
+        {# {% endif %} #}
 
         <a href="{{ path('app_logout') }}" class="btn btn-info float-right">Se déconnecter</a>
     </div>
 <br>
 
 </div>
-{% endif %}
 
 {% endblock %}

@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 
 /**
- * @ Route("/profile")
+ * @Route("/profile")
  */
 class ProfileController extends AbstractController
 {
@@ -40,9 +40,11 @@ class ProfileController extends AbstractController
     {
         $user = $this->security->getUser();
 
-        $appartement = $appartementRepository->findByuser;
 
         return $this->render('profile/profile.html.twig', [
+            'appartement' => $user,
+            'terrain' => $user,
+            'villa' => $user,
             'user' => $user,
         ]);
     }

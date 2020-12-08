@@ -3,7 +3,6 @@
 {% block title %}Cadex Group!{% endblock %}
 
 {% block body %}
-<!-- Scroll to top btn -->
 
 <header class="w3-display-container w3-content w3-hide-small " style="max-width:1500px">
     <img class="w3-image" src="{{ asset('img/header.jpg') }}" alt="header" width="1500" height="700">
@@ -18,7 +17,7 @@
         </div>
         <!-- Page content -->
     <div class="w3-display-container w3-content w3-light-grey " style="max-width:1350px; height:200px;">
-        <h1 class="m-3 text-center">Vos Experts du Marché de L'immobilier</h1></br>
+        <h1 class="m-3 text-center font-weight-bold">Vos Experts du Marché de L'immobilier</h1></br>
            <p class="text-center">
            Armés d'une connaissance approfondie de l’industrie immobilière,
            nous nous dédions au succès de nos clients lors de l’achat,</br>
@@ -26,6 +25,23 @@
         
     </div>
        
+</div>
+<div class="container">
+
+        <div class="row py-5">
+            <div class="row row-cols-1 m-3">
+                <img src="{{asset ('img/acheter.jpg') }}" alt="Acheter" width="150" height="200">
+                <a href="{{ path('acheter') }}"><h4 class="font-weight-bold">Acheter</h4></a>
+            </div>
+            <div class="row row-cols-1 m-3">
+                <img src="{{asset ('img/vendre.jpg') }}" alt="Vendre" width="400" height="350">
+                <a href="{{ path('vendre') }}"><h4 class="font-weight-bold">Vendre</h4></a>
+            </div>
+            <div class="row row-cols-1 m-3">
+                <img src="{{asset ('img/louer.jpg') }}" alt="Louer" width="250" height="200">
+                <a href="{{ path('louer') }}"><h4 class="font-weight-bold">Louer</h4><a/>
+            </div>
+        </div>
 </div>
 
 {% endblock %}
