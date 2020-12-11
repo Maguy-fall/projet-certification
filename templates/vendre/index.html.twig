@@ -14,17 +14,15 @@
 
 
     <div class="container m-3">
-         <h1>Renseignez les informations du bien que vous voulez vendre.</h1></br>
-         <h2>Vos informations personnelles</h2>
-
-    </div>
-    <div class="row p-5">
-        <div class="col-4 ">
+            <h1 class="font-weight-bold">Renseignez les informations du bien que vous voulez vendre.</h1></br>
+        <div class="row submit-form text-left m-3">
+            <h2 class="font-weight-bold">Vos informations personnelles</h2>
+        </div>
         
+        <div class="col-4" style="border-left-width: 1px;border-left: dashed;">
+       
                 {{ form_start(formulaireVendre) }}
                 {{ form_end(formulaireVendre) }}
-            </div>
         </div>
-
     </div>
     {% endblock %}
