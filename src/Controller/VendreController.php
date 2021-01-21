@@ -20,7 +20,7 @@ class VendreController extends AbstractController
 
         if($formulaireVendre->isSubmitted() && $formulaireVendre->isValid()){
             $infos = $formulaireVendre->getData();
-            $mail = (new\Swift_Message('CADEXGROUP - demande de contact'))
+            $mail = (new \Swift_Message('CADEXGROUP - demande de contact'))
                 ->setFrom($infos['email'])
                 ->setTo('maiga.falle@gmail.com')
                 ->setBody(

@@ -14,20 +14,20 @@ internautes. www.cadex-group.com permettra aux utilisateurs de se connecter en t
 
 # A quel public votre site s'adresse-t-il ?
 
-CADEX-GROUP conseille et accompagne particuliers, investisseurs, propriétaires, institutions, ONG et entreprises dans toute la chaîne de la valeur immobilière. Fort de plusieurs années d'expériences, Cadex-group conseille ses clients et investisseurs internationaux, dans l'acquisition et la valorisation de leurs biens immobiliers.
+CADEX-GROUP conseille et accompagne particuliers, investisseurs, propriétaires, institutions, ONG et entreprises dans toute la chaîne de la valeur immobilière. Fort de plusieurs années d'expériences, Cadex-group conseille ses clients et investisseurs internationaux, dans l'acquisition et la valorisation de leurs biens immobiliers.Sur le site de CADEX-GROUP les utilisateurs peuvet s'inscrire via un formulaire d'inscription et ont la possibilité ent tant que clients d'acheter ou de louer des biens immobilièrs: appartements, maisons, ou terrains en consultant toutes les offres disponibles sur le site.Ils peuvent aussi bénéficier de conseils personalisés en prenant rendez-vous.
 
 # Pouvez-vous donner plus d'informations sur les articles de votre site (maison, bieres, jeux etc.) ?
 
-Sur mon site on a la possibilité d'acheter des appartements, des villas, des terrains avec toutes les informations à disposition le prix,la surface et une belle description du bien et également louer des villas ou appartements. les clients peuvent aussi via un formulaire proposer des biens à la vente.
+Sur le site de CADEX6GROUP on a la possibilité d'acheter des appartements, des villas, des terrains. Toutes les informations concernant ses articles sont à disposition sur le site de CADEX-GROUP: le prix, la surface, le nombre de chambres, le nombre de salles de bain, le nombre de garages, une description brève du bien tout cela accompagné d'une belle photo du bien pour avoir un apperçu de l'offre. les clients peuvent aussi via un formulaire proposer des biens à la vente en renseignant les caractéristiques du bien à vendre.Un formulaire de contact est disponible également pour recueillir les informations de base des clients investisseurs en vue d'être recontacter par la suite.
 
 # Pouvez-vous donner un exemple d'un article que vous présentez sur votre site (maison,biere, jeu etc.) et le décrire ?
 
-Un exemple d'un article que je présente sur mon site est une villa en location.
+Un exemple d'un article que je présente sur mon site est une villa. le client qui se connecte peut aller sur les pages acheter ou louer et consulter toutes les offres notammant le prix, la surface, le nombre de chambres, le nombre de salles de bain, le nombre de garages, la description brève du bien tout cela accompagné d'une belle photo du bien pour avoir un apperçu de la villa que nous proposons.
 
 # Pourquoi pensez-vous que les gens s'y interesseront ?
 
 Je pense que les gens s'y interesserons car l'immobilier est un secteur privilégié et incontournable et en plus je pense que tout un
-chacun rêve d'acquérir un jour un bien immobilier.
+chacun rêve d'acquérir un jour un bien immobilier. Par ailleurs CADEX-GROUP propose à travers son site des produits défiant toute concurrence. Les clients pourront bénéficier de notre savoir-faire et notre professionalisme à travers de conseils stratégiques et des solutions pour leurs projets immobilièrs personalisés.
 
 # Comment votre idée pourra-t-elle se faire de l'argent ?
 

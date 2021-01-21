@@ -23,7 +23,8 @@ class UserType extends AbstractType
                 'multiple' => 'false',
                 'expanded' => 'false',
                 'choices' => [
-                    'client' => 'ROLE_USER',
+                    'Client' => 'ROLE_USER',
+                    'Partenaire' => 'ROLE_PRO',
                 ]
             ])
             ->add('password', PasswordType::class, [

@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -18,9 +19,9 @@ class VillaType extends AbstractType
             ->add('description',TextareaType::class,[
             'label' => 'Description',
             ])
-            ->add('prix', NumberType::class, [
+            ->add('prix', MoneyType::class, [
             'scale' => 2,
-            'label' => 'Prix en CFA',
+            'label' => 'Prix',
             ]
             )
             ->add('titre',TextType::class, [

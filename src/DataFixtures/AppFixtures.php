@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
             $appartement->setTitre($faker->name);
             $appartement->setDescription($faker->text);
             $appartement->setSurface($faker->numberBetween(80, 150));
-            $appartement->setPrix($faker->numberBetween(200.000, 200.000,000));
+            $appartement->setPrix($faker->numberBetween(100.000,000, 300.000,000));
             $appartement->setChambres($faker->numberBetween(1, 6));
             $appartement->setGarage($faker->numberBetween(0, 2));
             $appartement->setSalleDeBains($faker->numberBetween(1, 6));
