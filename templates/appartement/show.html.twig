@@ -47,6 +47,14 @@
                 <th>Salle_de_bains</th>
                 <td>{{ appartement.salleDeBains }}</td>
             </tr>
+                        <tr>
+                <th>Photos</th>
+                <td>
+                    {%for photo in appartement.photos %}
+                        <img src="{{ asset('uploads/catalogue/' ~ photo.imagefilename) }}">
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
     {% if is_granted('ROLE_ADMIN') %}

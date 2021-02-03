@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AppartementRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -56,6 +58,16 @@ class Appartement
      * @ORM\Column(type="integer")
      */
     private $salle_de_bains;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="appartement")
+     */
+    private $photos;
+
+    public function __construct()
+    {
+        $this->photos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -154,6 +166,36 @@ class Appartement
     public function setSalleDeBains(int $salle_de_bains): self
     {
         $this->salle_de_bains = $salle_de_bains;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Image[]
+     */
+    public function getPhotos(): Collection
+    {
+        return $this->photos;
+    }
+
+    public function addPhoto(Image $photo): self
+    {
+        if (!$this->photos->contains($photo)) {
+            $this->photos[] = $photo;
+            $photo->setAppartement($this);
+        }
+
+        return $this;
+    }
+
+    public function removePhoto(Image $photo): self
+    {
+        if ($this->photos->removeElement($photo)) {
+            // set the owning side to null (unless already changed)
+            if ($photo->getAppartement() === $this) {
+                $photo->setAppartement(null);
+            }
+        }
 
         return $this;
     }

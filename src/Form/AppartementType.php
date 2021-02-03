@@ -6,6 +6,7 @@ use App\Entity\Appartement;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -21,7 +22,8 @@ class AppartementType extends AbstractType
             ])
             ->add('prix', MoneyType::class, [
                 'scale' => 9,
-                'label' => 'Prix',
+                'label' => 'Prix ',
+                'currency' => 'CFA'
                 ]
             )
             ->add('titre',TextType::class, [
@@ -42,6 +44,20 @@ class AppartementType extends AbstractType
             ->add('salle_de_bains', Numbertype::class, [
                 'label' => 'Nombre de salles de bain'
             ])
+            ->add('photo', FileType::class, [
+                'label' => 'Brochure (PDF file)',
+
+                // unmapped means that this field is not associated to any entity property
+                'mapped' => false,
+
+                // make it optional so you don't have to re-upload the PDF file
+                // every time you edit the Product details
+                'required' => false,
+
+                // unmapped fields can't define their validation using annotations
+                // in the associated entity, so you can use the PHP constraint classes
+               
+                ])
         ;
     }
 

@@ -3,13 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Appartement;
+use App\Entity\Image;
 use App\Form\AppartementType;
 use App\Repository\AppartementRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  * @Route("/appartement")
@@ -31,16 +34,49 @@ class AppartementController extends AbstractController
      * @Route("/new", name="appartement_new", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
         $appartement = new Appartement();
         $form = $this->createForm(AppartementType::class, $appartement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
+
+            $photoFile = $form->get('photo')->getData();
+
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($photoFile) {
+                $originalFilename = pathinfo($photoFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$photoFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $photoFile->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $photo = new Image(); 
+                $photo->setImagefilename($newFilename);
+                $photo->setAppartement($appartement);
+                $entityManager->persist($photo);
+
+            }
+
+            
             $entityManager->persist($appartement);
             $entityManager->flush();
+
+            dump($appartement);die;
 
             return $this->redirectToRoute('appartement_index');
         }
