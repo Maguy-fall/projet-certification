@@ -27,15 +27,15 @@ class UserType extends AbstractType
                     'Partenaire' => 'ROLE_PRO',
                 ]
             ])
-            ->add('password', PasswordType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank ([
-                        'message' => 'Merci de renseigner un mot de passe',
-                    ])
+            // ->add('password', PasswordType::class, [
+            //     'mapped' => false,
+            //     'constraints' => [
+            //         new NotBlank ([
+            //             'message' => 'Merci de renseigner un mot de passe',
+            //         ])
 
-                ]
-            ])
+            //     ]
+            // ])
         ;
     }
 

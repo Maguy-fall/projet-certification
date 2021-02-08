@@ -13,7 +13,7 @@
   <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
       <div class="card-header">{{ appartement.titre }}</div>
         <div class="card-body">
-           <h4 class="card-title">{{ appartement.prix }}</h4>
+           <h4 class="card-title">{{ appartement.prix|number_format(2, ',', '.') }} CFA }}</h4>
            <p class="card-text">{{ appartement.description }}</p>
         </div>        
       </div>
@@ -29,7 +29,7 @@
   <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
       <div class="card-header">{{ villa.titre }}</div>
         <div class="card-body">
-           <h4 class="card-title">{{ villa.prix }}</h4>
+           <h4 class="card-title">{{ villa.prix|number_format(2, ',', '.') }} CFA }}</h4>
            <p class="card-text">{{ villa.description }}</p>
         </div>        
       </div>
@@ -46,7 +46,7 @@
   <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
       <div class="card-header">{{ terrain.titre }}</div>
         <div class="card-body">
-           <h4 class="card-title">{{ terrain.prix }}</h4>
+           <h4 class="card-title">{{ terrain.prix|number_format(2, ',', '.') }} CFA }}</h4>
            <p class="card-text">{{ terrain.description }}</p>
         </div>        
       </div>

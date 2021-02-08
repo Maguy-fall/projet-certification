@@ -45,7 +45,7 @@ class AppartementType extends AbstractType
                 'label' => 'Nombre de salles de bain'
             ])
             ->add('photo', FileType::class, [
-                'label' => 'Brochure (PDF file)',
+                'label' => 'image',
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
